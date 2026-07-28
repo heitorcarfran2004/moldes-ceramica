@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Espera! Oferta exclusiva — 500 Moldes de Cerâmica Fria por R$ 16,90</title>
-<meta name="description" content="Ultima chance: o pacote completo com os 500 moldes e os 5 bonus por R$ 16,90. Acesso imediato e garantia de 15 dias.">
+<title>Espera! Oferta exclusiva — 500 Moldes de Cerâmica Fria por R$ 8,90</title>
+<meta name="description" content="Ultima chance: o pacote completo com os 500 moldes e os 5 bonus por R$ 8,90. Acesso imediato e garantia de 15 dias.">
 <meta name="robots" content="noindex,nofollow">
 
 <!-- META PIXEL: cole seu pixel aqui -->
@@ -42,7 +42,9 @@ section{padding:48px 0}
 #retencao svg{width:15px;height:15px;stroke:#FFD9C9;stroke-width:2;fill:none;flex-shrink:0}
 
 /* ABERTURA */
-.abre{background:linear-gradient(170deg,#FDF9F4,var(--creme-esc));text-align:center;padding-top:34px}
+/* sem gradiente: o fundo e o mesmo creme do body de ponta a ponta, para nao
+   criar degrau de cor na emenda com o card de oferta */
+.abre{text-align:center;padding-top:34px}
 .selo-of{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--terracota);color:var(--terracota);
   background:rgba(255,255,255,.6);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
   padding:7px 16px;border-radius:99px;margin-bottom:18px}
@@ -110,7 +112,7 @@ section{padding:48px 0}
 .garantia p b{color:#fff}
 
 /* TIRA DE PECAS */
-.tira{background:#FDF9F4;overflow:hidden;padding-bottom:56px}
+.tira{overflow:hidden;padding-bottom:56px}
 .esteira{display:flex;gap:10px;width:max-content;animation:desliza 46s linear infinite}
 @keyframes desliza{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.esteira{animation:none}}
@@ -169,9 +171,9 @@ footer{background:#151515;color:#8E8E8E;text-align:center;padding:26px 20px;font
 
       <div class="linha-de">
         <span class="de">De R$ 197,00</span>
-        <span class="economia">Economize R$ 180,10</span>
+        <span class="economia">Economize R$ 188,10</span>
       </div>
-      <span class="por"><span class="cifra">R$</span>16<span class="cent">,90</span></span>
+      <span class="por"><span class="cifra">R$</span>8<span class="cent">,90</span></span>
       <p class="parcela">à vista no Pix ou cartão · pagamento único</p>
 
       <div class="contador">
@@ -205,7 +207,7 @@ footer{background:#151515;color:#8E8E8E;text-align:center;padding:26px 20px;font
 
       <p class="escassez">Esta condição não aparece em nenhuma outra página do site</p>
 
-      <!-- SUBSTITUIR: #checkout-promo → link da Wiapy da oferta de R$ 16,90 -->
+      <!-- SUBSTITUIR: #checkout-promo → link da Wiapy da oferta de R$ 8,90 -->
       <a href="#checkout-promo" class="cta">Aproveitar oferta</a>
 
       <div class="selos">
@@ -262,8 +264,8 @@ footer{background:#151515;color:#8E8E8E;text-align:center;padding:26px 20px;font
 <section class="fim">
   <div class="wrap">
     <h2>Comece suas peças ainda hoje</h2>
-    <p>Por R$ 16,90 você leva os 500 moldes e os 5 bônus. Ao sair desta página, a oferta volta para R$ 26,90.</p>
-    <!-- SUBSTITUIR: #checkout-promo → link da Wiapy da oferta de R$ 16,90 -->
+    <p>Por R$ 8,90 você leva os 500 moldes e os 5 bônus. Ao sair desta página, a oferta volta para R$ 25,90.</p>
+    <!-- SUBSTITUIR: #checkout-promo → link da Wiapy da oferta de R$ 8,90 -->
     <a href="#checkout-promo" class="cta">Quero começar agora</a>
     <a class="recusa" href="/">Não, prefiro continuar sem o desconto</a>
   </div>
