@@ -1,0 +1,10 @@
+# Dependencias
+node_modules/
+
+# Segredos / config local
+config-automatico.json
+
+# Logs e temporarios
+*.log
+.DS_Store
+Thumbs.db

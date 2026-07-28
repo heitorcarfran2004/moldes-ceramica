@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>500 Moldes de Cerâmica Fria Sem Forno — Acesso Imediato</title>
+<meta name="description" content="500 moldes digitais prontos para imprimir, recortar e criar peças de cerâmica fria com acabamento profissional. Sem forno, sem saber desenhar.">
+
+<!-- META PIXEL: cole seu pixel aqui -->
+<!-- UTMIFY: cole seu pixel aqui -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --terracota:#C2603C; --terracota-esc:#A34D2D; --marrom:#3A1B09; --marrom-suave:#6B4A35;
+  --creme:#FAF5EE; --creme-esc:#F0E5D6; --branco:#fff; --verde:#1F9D55; --verde-claro:#E8F6EE;
+  --sombra:0 4px 16px rgba(58,27,9,.08); --sombra-fd:0 12px 32px rgba(58,27,9,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,sans-serif;background:var(--creme);color:var(--marrom);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:600px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.disp{font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;line-height:1.15;letter-spacing:-.02em}
+section{padding:52px 0}
+.cta{display:block;width:100%;background:var(--verde);color:#fff;text-align:center;text-decoration:none;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;text-transform:uppercase;letter-spacing:.03em;
+  padding:19px 22px;border-radius:14px;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(31,157,85,.32);
+  transition:transform .18s,box-shadow .18s;animation:pulso 2.4s ease-in-out infinite}
+.cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(31,157,85,.42)}
+@keyframes pulso{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+@media(prefers-reduced-motion:reduce){.cta{animation:none}}
+.subcta{text-align:center;font-size:.8rem;color:var(--marrom-suave);margin-top:12px}
+
+/* STICKY */
+/* faixa no topo do documento — rola junto com a página, não fica fixa */
+#sticky{background:var(--marrom);color:#fff;padding:8px 12px;text-align:center;line-height:1.3}
+#sticky .chamada{display:flex;align-items:center;justify-content:center;gap:6px;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.74rem;
+  text-transform:uppercase;letter-spacing:.13em;white-space:nowrap}
+#sticky .chamada svg{width:14px;height:14px;stroke:#E8836A;stroke-width:2;fill:none;flex-shrink:0}
+#sticky .prazo{font-size:.72rem;font-weight:500;color:rgba(255,255,255,.9);margin-top:2px;white-space:nowrap}
+
+/* HERO */
+.hero{background:linear-gradient(170deg,#FDF9F4,var(--creme-esc));padding-top:34px;text-align:center}
+.selo{display:inline-block;background:var(--terracota);color:#fff;font-size:.68rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.12em;padding:6px 14px;border-radius:99px;margin-bottom:18px}
+.hero h1{font-size:2.35rem;margin-bottom:14px}
+.hero h1 .num{color:var(--terracota);font-size:3.3rem;display:block;line-height:1}
+.hero p.sub{font-size:1.02rem;color:var(--marrom-suave);margin-bottom:24px}
+.heroimg{width:100%;height:auto;max-width:336px;margin:0 auto 22px;
+  filter:drop-shadow(0 14px 30px rgba(58,27,9,.16))}
+.stats{display:flex;gap:10px;margin-top:22px}
+.stat{flex:1;background:rgba(255,255,255,.7);border:1px solid var(--creme-esc);border-radius:12px;padding:12px 6px}
+.stat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.2rem;color:var(--terracota)}
+.stat span{font-size:.68rem;color:var(--marrom-suave);text-transform:uppercase;letter-spacing:.05em}
+
+/* DOR */
+.dor{background:var(--marrom);color:#F3E9DE}
+.dor h2{color:#fff;font-size:1.65rem;margin-bottom:22px}
+.dor ul{list-style:none}
+.dor li{padding:13px 0 13px 34px;position:relative;border-bottom:1px solid rgba(255,255,255,.1);font-size:.97rem}
+.dor li:before{content:"✕";position:absolute;left:6px;top:13px;color:#E8836A;font-weight:700}
+.dor .vira{margin-top:24px;font-size:1.12rem;font-weight:600;color:#fff;font-family:'Space Grotesk',sans-serif;line-height:1.4}
+
+/* CARROSSEL */
+.carrossel{background:linear-gradient(180deg,var(--creme),#FDF9F4);overflow:hidden}
+/* sem scroll-snap: ele brigaria com o deslize automatico continuo */
+.trilho{display:flex;align-items:flex-start;gap:14px;overflow-x:auto;
+  padding:4px 20px 18px;margin:0 -20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.trilho::-webkit-scrollbar{display:none}
+.slide{flex:0 0 78%;max-width:290px;background:#fff;border-radius:16px;
+  overflow:hidden;box-shadow:var(--sombra);border:1px solid var(--creme-esc)}
+/* height:auto anula o atributo height="800" do HTML — sem isso a imagem estica */
+.slide img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:var(--creme-esc)}
+.palco{position:relative}
+.carrossel-nav{display:flex;align-items:center;justify-content:center;margin-top:2px}
+/* setas flutuando sobre as peças vizinhas, centradas na imagem */
+.seta{position:absolute;top:50%;z-index:5;width:42px;height:42px;border-radius:50%;
+  border:1px solid rgba(58,27,9,.08);background:rgba(255,255,255,.92);backdrop-filter:blur(6px);
+  color:var(--terracota);font-size:1.35rem;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;padding-bottom:2px;
+  box-shadow:0 4px 14px rgba(58,27,9,.18);transition:background .18s,transform .18s,opacity .18s;
+  transform:translateY(-50%)}
+.seta-e{left:2px}
+.seta-d{right:2px}
+.seta:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+/* janela fixa de 7 bolinhas — nunca quebra linha, o strip desliza por dentro */
+.bolinhas{overflow:hidden;width:85px;flex-shrink:0}
+.strip{display:flex;gap:6px;transition:transform .28s ease}
+.bolinha{flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:#D9CBBB;border:none;padding:0;
+  cursor:pointer;transition:background .2s,transform .2s,opacity .2s}
+.bolinha.on{background:var(--terracota);transform:scale(1.4)}
+.bolinha.borda{opacity:.45;transform:scale(.7)}
+
+h2.tit{font-size:1.75rem;text-align:center;margin-bottom:8px}
+p.subtit{text-align:center;color:var(--marrom-suave);margin-bottom:30px;font-size:.95rem}
+
+/* RECEBE */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fff;border:1px solid var(--creme-esc);border-radius:14px;padding:18px 14px;text-align:center;
+  box-shadow:var(--sombra);transition:transform .2s}
+.card:hover{transform:translateY(-3px)}
+.card .ic{display:flex;align-items:center;justify-content:center;height:44px;margin-bottom:6px}
+.card .ic svg{width:32px;height:32px;stroke:var(--terracota);stroke-width:1.5;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.card:hover .ic svg{transform:scale(1.08)}
+.card b{display:block;font-family:'Space Grotesk',sans-serif;font-size:.95rem;margin-bottom:4px}
+.card span{font-size:.78rem;color:var(--marrom-suave);line-height:1.45;display:block}
+.lista{background:#fff;border-radius:14px;padding:20px;margin-top:16px;border:1px solid var(--creme-esc)}
+.lista li{list-style:none;padding:9px 0 9px 30px;position:relative;font-size:.92rem;border-bottom:1px solid var(--creme)}
+.lista li:last-child{border:none}
+.lista li:before{content:"✓";position:absolute;left:4px;color:var(--verde);font-weight:700}
+
+/* PROVA */
+.prova{background:var(--creme-esc)}
+.dep{background:#fff;border-radius:14px;padding:20px;margin-bottom:14px;box-shadow:var(--sombra);
+  display:flex;gap:15px;align-items:flex-start}
+.dep .ico{width:42px;height:42px;border-radius:12px;background:var(--creme);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center}
+.dep .ico svg{width:22px;height:22px;stroke:var(--terracota);stroke-width:1.6;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+.dep b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1rem;margin-bottom:4px;color:var(--marrom)}
+.dep p{font-size:.9rem;color:var(--marrom-suave);line-height:1.55}
+.dep-real .av-foto{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.dep-real .av-ini{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:var(--terracota);
+  color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;
+  font-weight:700;font-size:1.25rem}
+.dep-real .est{color:#E8A33D;font-size:.85rem;letter-spacing:2px;margin-bottom:6px}
+.dep-real p{font-style:italic;margin-bottom:8px;color:var(--marrom-suave);line-height:1.55}
+.dep-real b{font-size:.88rem;color:var(--marrom)}
+
+/* BONUS */
+.bonus{background:var(--marrom);color:#F3E9DE}
+.bonus h2{color:#fff}
+.bonus p.subtit{color:#C9B5A3}
+.bcard{position:relative;background:#fff;border-radius:16px;margin-bottom:16px;overflow:hidden;
+  box-shadow:0 8px 24px rgba(0,0,0,.22)}
+.bcard .capa{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--creme-esc)}
+/* tag colada na borda esquerda, sobrepondo o topo da capa */
+.bcard .n{position:absolute;top:14px;left:0;z-index:2;background:var(--creme);color:var(--marrom);
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:7px 14px 7px 12px;border-radius:0 8px 8px 0;white-space:nowrap;box-shadow:0 3px 12px rgba(58,27,9,.22)}
+.bcard .txt{padding:16px 18px 18px}
+.bcard b{display:block;color:var(--marrom);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:5px;line-height:1.25}
+.bcard span{font-size:.85rem;color:var(--marrom-suave);display:block;line-height:1.5}
+.bcard .val{font-size:.75rem;color:#B9503A;text-decoration:line-through;margin-top:9px;display:block;font-weight:700}
+.btotal{text-align:center;margin-top:24px;font-family:'Space Grotesk',sans-serif;font-size:1.15rem;color:#fff;line-height:1.5}
+.btotal em{color:#7BD99F;font-style:normal;font-weight:700}
+
+/* PRICING */
+.plano{background:#fff;border:2px solid var(--creme-esc);border-radius:18px;padding:24px 20px;margin-bottom:18px;position:relative}
+.plano.dest{border-color:var(--terracota);box-shadow:var(--sombra-fd)}
+.tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--terracota);color:#fff;
+  font-size:.68rem;font-weight:700;padding:6px 16px;border-radius:99px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.plano h3{font-size:1.05rem;text-transform:uppercase;letter-spacing:.08em;color:var(--marrom-suave);text-align:center;margin-bottom:14px}
+.preco{text-align:center;margin-bottom:18px}
+.preco .de{display:block;font-size:.85rem;color:#B9503A;text-decoration:line-through;font-weight:600}
+.preco .por{font-family:'Space Grotesk',sans-serif;font-size:3.1rem;font-weight:700;color:var(--marrom);
+  line-height:1;display:inline-flex;align-items:flex-start;justify-content:center;gap:2px}
+.preco .por .cifra{font-size:1.3rem;margin-top:.45em;font-weight:500}
+.preco .por .cent{font-size:1.35rem;margin-top:.3em;letter-spacing:-.01em}
+.preco .par{display:block;font-size:.8rem;color:var(--marrom-suave);margin-top:6px}
+.economiza{display:inline-block;background:var(--verde-claro);color:var(--verde);font-size:.75rem;font-weight:700;
+  padding:5px 12px;border-radius:99px;margin-top:10px}
+.plano ul{list-style:none;margin-bottom:20px}
+.plano li{padding:8px 0 8px 26px;position:relative;font-size:.88rem;line-height:1.5}
+.plano li:before{content:"✓";position:absolute;left:2px;color:var(--verde);font-weight:700}
+.plano.basico li:before{color:#C4B5A5}
+.badges{display:flex;justify-content:center;gap:14px;margin-top:14px;flex-wrap:wrap}
+.badges span{font-size:.7rem;color:var(--marrom-suave);display:flex;align-items:center;gap:4px}
+.alerta{background:#FFF4E8;border:1px solid #F0D9BE;border-radius:10px;padding:11px;text-align:center;
+  font-size:.78rem;color:#8A5A2B;font-weight:600;margin-bottom:16px}
+
+/* GARANTIA */
+.garantia{background:var(--creme-esc);text-align:center}
+.selo-g{width:120px;height:120px;border-radius:50%;background:#fff;border:3px dashed var(--terracota);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 20px;
+  font-family:'Space Grotesk',sans-serif;color:var(--terracota);box-shadow:var(--sombra)}
+.selo-g b{font-size:2.1rem;line-height:1}
+.selo-g span{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em}
+.garantia p{font-size:.95rem;color:var(--marrom-suave);margin-top:12px}
+
+/* FAQ */
+.faq details{background:#fff;border:1px solid var(--creme-esc);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq summary{padding:16px 18px;font-weight:600;font-size:.93rem;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-size:1.4rem;color:var(--terracota);font-weight:400;flex-shrink:0;transition:transform .2s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq p{padding:0 18px 16px;font-size:.88rem;color:var(--marrom-suave)}
+
+/* FINAL */
+.final{background:var(--terracota);color:#fff;text-align:center}
+.final h2{color:#fff;font-size:1.85rem;margin-bottom:12px}
+.final p{font-size:1rem;margin-bottom:24px;color:#FFE8DE}
+.final .cta{background:#fff;color:var(--terracota-esc);box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.ancora-perda{margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:1rem;color:#FFD9C9;line-height:1.5}
+
+footer{background:var(--marrom);color:#9C8574;text-align:center;padding:30px 20px;font-size:.72rem;line-height:1.7}
+
+/* POPUP */
+#pop{position:fixed;inset:0;background:rgba(58,27,9,.7);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+#pop.on{display:flex}
+.popbox{background:#fff;border-radius:20px;max-width:400px;width:100%;padding:28px 22px;text-align:center;position:relative;box-shadow:var(--sombra-fd)}
+.popbox .x{position:absolute;top:12px;right:16px;font-size:1.5rem;color:#C4B5A5;cursor:pointer;background:none;border:none;line-height:1}
+.popbox h3{font-size:1.35rem;margin-bottom:10px}
+.popbox p{font-size:.9rem;color:var(--marrom-suave);margin-bottom:18px}
+.popbox .dif{background:var(--verde-claro);border-radius:12px;padding:14px;margin-bottom:18px}
+.popbox .dif b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;color:var(--verde);display:block}
+.popbox .dif span{font-size:.8rem;color:var(--marrom-suave)}
+.popbox .naovaler{display:block;margin-top:14px;font-size:.78rem;color:#B0A093;text-decoration:underline;cursor:pointer;background:none;border:none;width:100%}
+</style>
+</head>
+<body>
+
+<!-- 1. STICKY BAR -->
+<div id="sticky">
+  <div class="chamada">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Oportunidade única:
+  </div>
+  <div class="prazo">Promoção válida somente até hoje, <span id="dataHoje"></span></div>
+</div>
+
+<!-- 2. HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="selo">Ideal para iniciantes</span>
+    <h1><span class="num">500</span> Moldes de Cerâmica Fria Sem Forno</h1>
+    <p class="sub">Imprima, recorte e crie peças com acabamento de loja — mesmo que você <b>nunca tenha desenhado na vida</b>.</p>
+
+    <picture>
+      <source srcset="assets/hero.webp" type="image/webp">
+      <img class="heroimg" src="assets/hero.png" alt="Catálogo 500 Moldes para Cerâmica com fichas de registro de queima, mini guia de pintura e cartões de moldes" width="900" height="1125" fetchpriority="high">
+    </picture>
+
+    <a class="cta js-planos">Quero os 500 moldes</a>
+    <p class="subcta">Acesso imediato · Pagamento único · Garantia de 15 dias</p>
+
+    <div class="stats">
+      <div class="stat"><b>500</b><span>Moldes</span></div>
+      <div class="stat"><b>12</b><span>Categorias</span></div>
+      <div class="stat"><b>4.9</b><span>Avaliação</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. DOR -->
+<section class="dor">
+  <div class="wrap">
+    <h2>Você já perdeu massa tentando acertar no olho?</h2>
+    <ul>
+      <li>Senta pra criar e trava, porque não sabe <b>o que</b> fazer</li>
+      <li>Desenha à mão e a peça sai torta, desproporcional, amadora</li>
+      <li>Acha um molde bonito na internet e vem sem medida nenhuma</li>
+      <li>Gasta massa e horas num teste que vai direto pro lixo</li>
+      <li>Tem medo de cobrar caro por uma peça que não parece profissional</li>
+      <li>Acha que precisa de forno — e desiste antes de começar</li>
+    </ul>
+    <p class="vira">A verdade é que o problema nunca foi seu talento. Foi não ter o formato certo na mão.</p>
+  </div>
+</section>
+
+<!-- 3.5 CARROSSEL DE PEÇAS -->
+<section class="carrossel">
+  <div class="wrap">
+    <h2 class="tit">Olha o que dá pra criar</h2>
+    <p class="subtit">Peças reais feitas a partir dos moldes do catálogo — arraste para o lado</p>
+
+    <div class="palco">
+    <button class="seta seta-e" id="setaE" onclick="mover(-1)" aria-label="Peça anterior">‹</button>
+    <button class="seta seta-d" id="setaD" onclick="mover(1)" aria-label="Próxima peça">›</button>
+    <div class="trilho" id="trilho">
+      <figure class="slide"><img src="assets/pecas-web/01-coracao-floral.webp" alt="Pratinho de coração com relevo floral e alianças" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/02-margarida.webp" alt="Pratinho de margarida com pétalas em relevo" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/03-gatinho.webp" alt="Pratinho em formato de gatinho com alianças" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/04-vela-incenso.webp" alt="Bandeja de vela e incenso com lua e estrelas" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/05-vaso.webp" alt="Vaso solitário com flores secas" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/06-porta-utensilios.webp" alt="Porta-utensílios em arco" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/07-jogo-velha.webp" alt="Jogo da velha em cerâmica" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/08-porta-guardanapo.webp" alt="Porta-guardanapo com relevo de concha" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/09-xicara-flor.webp" alt="Xícara em formato de flor" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/10-tigelas.webp" alt="Tigelas empilhadas com espiral" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/11-conjunto-modular.webp" alt="Conjunto modular de servir" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/12-travessa-dividida.webp" alt="Travessa dividida" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/13-canecas.webp" alt="Quatro canecas de cerâmica" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/14-bule.webp" alt="Bule de cerâmica" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/16-jarra.webp" alt="Jarra de cerâmica" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/17-regador.webp" alt="Regador de cerâmica" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/18-espremedor.webp" alt="Espremedor de cítricos" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/19-ralador.webp" alt="Ralador de alho em cerâmica" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/20-travessa-forno.webp" alt="Travessa de forno" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/21-manteigueira.webp" alt="Manteigueira de cerâmica" loading="lazy" width="800" height="800"></figure>
+      <figure class="slide"><img src="assets/pecas-web/22-porta-papel.webp" alt="Porta papel toalha de cerâmica" loading="lazy" width="800" height="800"></figure>
+    </div>
+
+    </div><!-- /palco -->
+
+    <div class="carrossel-nav">
+      <div class="bolinhas" id="bolinhas"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. O QUE VOCÊ RECEBE -->
+<section>
+  <div class="wrap">
+    <h2 class="tit">Tudo que você vai receber</h2>
+    <p class="subtit">Um acervo digital categorizado, pronto pra imprimir na impressora comum de casa</p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20c0-8.5 5.5-14.5 16-15.5C21 15 14.5 20.5 5.5 20.5"/><path d="M6 18.5c3-4.5 6.5-7 11-8.5"/></svg></span>
+        <b>Folhas</b><span>Nervuras realistas em 6 tamanhos</span>
+      </div>
+      <div class="card">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6"/><circle cx="12" cy="6.4" r="2.9"/><circle cx="16.8" cy="9.2" r="2.9"/><circle cx="16.8" cy="14.8" r="2.9"/><circle cx="12" cy="17.6" r="2.9"/><circle cx="7.2" cy="14.8" r="2.9"/><circle cx="7.2" cy="9.2" r="2.9"/></svg></span>
+        <b>Flores</b><span>Margaridas, rosas, campo e silvestres</span>
+      </div>
+      <div class="card">
+        <span class="ic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9.5" ry="6.5"/><ellipse cx="12" cy="12" rx="6" ry="3.6"/></svg></span>
+        <b>Bandejas</b><span>Oval, redonda, hexagonal e nuvem</span>
+      </div>
+      <div class="card">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M8.5 3h7"/><path d="M9 3c0 3.2-3.2 4-3.2 8.3C5.8 16.5 8.6 21 12 21s6.2-4.5 6.2-9.7C18.2 7 15 6.2 15 3"/><path d="M7.4 12.5h9.2"/></svg></span>
+        <b>Vasos</b><span>Canelados, lisos e mini cachepôs</span>
+      </div>
+      <div class="card">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 12.6V4.4A1.4 1.4 0 0 1 4.4 3h8.2a1.4 1.4 0 0 1 1 .4l7 7a1.4 1.4 0 0 1 0 2l-8.2 8.2a1.4 1.4 0 0 1-2 0l-7-7a1.4 1.4 0 0 1-.4-1z"/><circle cx="7.6" cy="7.6" r="1.6"/></svg></span>
+        <b>Tags</b><span>Etiquetas e pingentes decorativos</span>
+      </div>
+      <div class="card">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 20.5S3.8 15.6 3.8 10.2A4.2 4.2 0 0 1 12 8.2a4.2 4.2 0 0 1 8.2 2c0 5.4-8.2 10.3-8.2 10.3z"/></svg></span>
+        <b>Enfeites</b><span>Corações, estrelas e miniaturas</span>
+      </div>
+      <div class="card">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><circle cx="12" cy="12" r="5.2"/><circle cx="12" cy="12" r="1.6"/></svg></span>
+        <b>Porta-copos</b><span>Jogos combinando em 4 formatos</span>
+      </div>
+      <div class="card">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.8" r="3.8"/><path d="M3.2 16.8c0-1.6 3.9-2.8 8.8-2.8s8.8 1.2 8.8 2.8-3.9 3.4-8.8 3.4-8.8-1.8-8.8-3.4z"/></svg></span>
+        <b>Porta-joias</b><span>Pratinhos e bandejas de anel</span>
+      </div>
+    </div>
+
+    <div class="lista">
+      <ul>
+        <li><b>500 moldes vetoriais</b> em alta resolução, prontos pra imprimir</li>
+        <li><b>Medidas reais impressas</b> em cada molde — sem chute, sem peça torta</li>
+        <li><b>Guias de corte</b> passo a passo em cada folha</li>
+        <li><b>Acesso vitalício</b> pela área de membros + atualizações inclusas</li>
+        <li><b>Imprima quantas vezes quiser</b>, em celular, tablet ou PC</li>
+        <li><b>Liberdade total de venda</b> das peças que você produzir</li>
+      </ul>
+    </div>
+
+    <div style="margin-top:24px"><a class="cta js-planos">Acessar agora e usar hoje</a></div>
+  </div>
+</section>
+
+<!-- 5. PROVA SOCIAL -->
+<section class="prova">
+  <div class="wrap">
+    <h2 class="tit">Quem já testou</h2>
+    <p class="subtit">Feedback de quem recebeu o material</p>
+
+    <!-- Fotos pendentes de confirmação: se forem as fotos reais das clientes
+         (ou autorizadas), trocar o .av-ini por <img class="av-foto" src="..."> -->
+    <div class="dep dep-real">
+      <div class="av-ini">J</div>
+      <div>
+        <p>"Imprimi os moldes ontem e tô em choque. Sempre fui péssima pra fazer no olho, ficava tudo torto. Coloquei o molde da bandeja, cortei com o estilete e ficou perfeita, parece de loja! Facilitou demais."</p>
+        <b>Juliana Mendes</b>
+      </div>
+    </div>
+    <div class="dep dep-real">
+      <div class="av-ini">B</div>
+      <div>
+        <p>"Testei com a massa fria e deu super certo. Tava com medo por não ter forno e nunca ter feito, mas a saboneteira secou direitinho na mesa. As medidas são exatas. Já tô imprimindo mais um monte aqui, não quero parar kkkk"</p>
+        <b>Beatriz Costa</b>
+      </div>
+    </div>
+    <div class="dep dep-real">
+      <div class="av-ini">F</div>
+      <div>
+        <p>"Testei os moldes de porta-incenso ontem e consegui fazer o triplo de peças no mesmo tempo! O acabamento ficou tão bom que postei foto hoje no almoço e já teve gente interessada."</p>
+        <b>Fernanda Alves</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. BÔNUS -->
+<section class="bonus">
+  <div class="wrap">
+    <h2 class="tit">5 bônus exclusivos</h2>
+    <p class="subtit">Inclusos no plano Completo, sem custo adicional</p>
+
+    <div class="bcard">
+      <span class="n">Bônus 1</span>
+      <picture><source srcset="assets/bonus/bonus-1.webp" type="image/webp">
+      <img class="capa" src="assets/bonus/bonus-1.jpg" alt="Mini Guia de Pintura para Cerâmicas" loading="lazy" width="1000" height="563"></picture>
+      <div class="txt"><b>Mini Guia de Pintura para Cerâmicas</b><span>Tintas certas para cada massa, preparo da base, pincelada sem marca e as combinações de cor que mais vendem.</span><span class="val">R$ 27</span></div>
+    </div>
+    <div class="bcard">
+      <span class="n">Bônus 2</span>
+      <picture><source srcset="assets/bonus/bonus-2.webp" type="image/webp">
+      <img class="capa" src="assets/bonus/bonus-2.jpg" alt="Primeiros Passos Sem Forno" loading="lazy" width="1000" height="563"></picture>
+      <div class="txt"><b>Primeiros Passos Sem Forno</b><span>Preparo da massa, modelagem e cura ao ar sem rachadura.</span><span class="val">R$ 27</span></div>
+    </div>
+    <div class="bcard">
+      <span class="n">Bônus 3</span>
+      <picture><source srcset="assets/bonus/bonus-3.webp" type="image/webp">
+      <img class="capa" src="assets/bonus/bonus-3.jpg" alt="Checklist de Acabamento Premium" loading="lazy" width="1000" height="563"></picture>
+      <div class="txt"><b>Checklist de Acabamento Premium</b><span>Lixamento, selagem e blindagem contra umidade.</span><span class="val">R$ 27</span></div>
+    </div>
+    <div class="bcard">
+      <span class="n">Bônus 4</span>
+      <picture><source srcset="assets/bonus/bonus-4.webp" type="image/webp">
+      <img class="capa" src="assets/bonus/bonus-4.jpg" alt="Kits Que Mais Vendem" loading="lazy" width="1000" height="563"></picture>
+      <div class="txt"><b>Kits Que Mais Vendem</b><span>Combinações prontas de lembrancinha de casamento e presente.</span><span class="val">R$ 27</span></div>
+    </div>
+    <div class="bcard">
+      <span class="n">Bônus 5</span>
+      <picture><source srcset="assets/bonus/bonus-5.webp" type="image/webp">
+      <img class="capa" src="assets/bonus/bonus-5.jpg" alt="Planilha de Precificação" loading="lazy" width="1000" height="563"></picture>
+      <div class="txt"><b>Planilha de Precificação</b><span>Custo real, margem segura e o valor do seu tempo.</span><span class="val">R$ 27</span></div>
+    </div>
+
+    <p class="btotal">R$ 135 em bônus<br><em>saem de graça adquirindo hoje</em></p>
+  </div>
+</section>
+
+<!-- 7. PRICING -->
+<section id="planos">
+  <div class="wrap">
+    <h2 class="tit">Escolha a opção ideal</h2>
+    <p class="subtit">Pagamento único. Sem mensalidade, sem renovação.</p>
+
+    <div class="plano basico">
+      <h3>Plano Básico</h3>
+      <div class="preco">
+        <span class="de">De R$ 67,00</span>
+        <span class="por"><span class="cifra">R$</span>10<span class="cent">,00</span></span>
+        <span class="par">à vista no Pix ou cartão</span>
+      </div>
+      <ul>
+        <li>500 moldes vetoriais completos</li>
+        <li>Acesso vitalício à área de membros</li>
+        <li>Download imediato após a compra</li>
+        <li style="opacity:.45">Sem os 5 bônus exclusivos</li>
+        <li style="opacity:.45">Sem suporte prioritário</li>
+      </ul>
+      <div class="alerta">92% das alunas escolhem o plano Completo abaixo</div>
+      <button class="cta" style="background:#8C7563" onclick="abrirPop()">Quero só os moldes</button>
+    </div>
+
+    <div class="plano dest">
+      <span class="tag">⚡ Mais vendido</span>
+      <h3>Plano Completo</h3>
+      <div class="preco">
+        <span class="de">De R$ 197,00</span>
+        <span class="por"><span class="cifra">R$</span>26<span class="cent">,90</span></span>
+        <span class="par">ou 3x de R$ 8,97 no cartão</span>
+        <span class="economiza">Você economiza R$ 170,10</span>
+      </div>
+      <ul>
+        <li>500 moldes vetoriais completos</li>
+        <li>Acesso vitalício + atualizações futuras</li>
+        <li><b>Os 5 bônus exclusivos</b> (R$ 135)</li>
+        <li>Planilha de precificação pronta</li>
+        <li>Suporte prioritário no WhatsApp</li>
+        <li>Liberdade total de venda das peças</li>
+      </ul>
+      <!-- SUBSTITUIR: #checkout-premium → link da Wiapy do plano Completo -->
+      <a href="#checkout-premium" class="cta">Quero tudo com os bônus</a>
+      <div class="badges">
+        <span>🔒 Compra segura</span><span>♾️ Vitalício</span><span>↩️ 15 dias de garantia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. GARANTIA -->
+<section class="garantia">
+  <div class="wrap">
+    <div class="selo-g"><b>15</b><span>dias</span></div>
+    <h2 class="tit">Risco zero de verdade</h2>
+    <p>Você tem 15 dias inteiros pra baixar, imprimir e testar na massa. Se achar que os formatos não servem pra você, manda uma mensagem e devolvemos <b>100% do valor</b>. Sem pergunta, sem burocracia, sem precisar justificar nada.</p>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <h2 class="tit">Perguntas frequentes</h2>
+    <p class="subtit">&nbsp;</p>
+
+    <details open><summary>Preciso ter forno?</summary><p>Não. Todos os moldes são pensados para cerâmica fria ou massa de secagem ao ar, que cura sozinha em temperatura ambiente. Nada vai ao forno em momento nenhum.</p></details>
+    <details><summary>Funciona se eu nunca fiz cerâmica?</summary><p>Sim. Cada molde vem com as proporções corretas e guias de corte impressas. É recortar, transferir pra massa e seguir a linha. A curva de aprendizado que trava a maioria simplesmente não existe aqui.</p></details>
+    <details><summary>Como eu recebo o material?</summary><p>É 100% digital. Assim que o pagamento é confirmado, você recebe o acesso à área de membros por e-mail e já pode baixar os PDFs em alta qualidade e imprimir na sua impressora comum.</p></details>
+    <details><summary>Preciso de impressora especial?</summary><p>Não. Qualquer impressora doméstica em folha A4 comum dá conta. Se preferir, dá pra levar o arquivo numa papelaria e imprimir por centavos.</p></details>
+    <details><summary>Posso vender as peças que eu fizer?</summary><p>Pode, sem limite. Você tem liberdade total para produzir e comercializar as peças decoradas — bandejas, porta-joias, lembrancinhas, o que quiser. O que não é permitido é revender os arquivos digitais.</p></details>
+    <details><summary>Qual a diferença entre os dois planos?</summary><p>No Básico você leva os 500 moldes. No Completo você leva os mesmos 500 moldes mais os 5 bônus — mini guia de pintura, primeiros passos, checklist de acabamento, kits que vendem e planilha de precificação — além do suporte prioritário.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 15 dias de garantia incondicional. Manda uma mensagem e devolvemos o valor integral. O risco é todo nosso.</p></details>
+    <details><summary>O acesso expira?</summary><p>Nunca. É pagamento único e acesso vitalício, incluindo as atualizações que forem lançadas no acervo.</p></details>
+  </div>
+</section>
+
+<!-- 10. CTA FINAL -->
+<section class="final">
+  <div class="wrap">
+    <h2>Amanhã esse preço não existe mais</h2>
+    <p>O valor promocional é válido apenas enquanto o cronômetro do topo estiver rodando.</p>
+    <!-- SUBSTITUIR: #checkout-premium → link da Wiapy do plano Completo -->
+    <a href="#checkout-premium" class="cta">Garantir meus 500 moldes</a>
+    <p class="ancora-perda">R$ 26,90 hoje — ou mais um mês inteiro travada, sem saber o que criar.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>500 Moldes de Cerâmica Fria Sem Forno</b></p>
+    <p style="margin-top:8px">Produto 100% digital. Pagamento processado com segurança pela Wiapy.<br>
+    Todos os direitos reservados nos termos da Lei nº 9.610/98.</p>
+    <p style="margin-top:8px">Contato: [seu e-mail de suporte]</p>
+  </div>
+</footer>
+
+<!-- 12. POPUP DOWNSELL -->
+<div id="pop" role="dialog" aria-modal="true" aria-labelledby="poptit">
+  <div class="popbox">
+    <button class="x" onclick="fecharPop()" aria-label="Fechar">×</button>
+    <h3 id="poptit">Espera — só nesta tela</h3>
+    <p>Leve o pacote <b>Completo com os 5 bônus</b> por um valor que não aparece em nenhum outro lugar do site.</p>
+    <div class="dif">
+      <span style="text-decoration:line-through;color:#B0A093;font-size:.85rem">R$ 26,90</span>
+      <b>R$ 16,90</b>
+      <span>apenas R$ 6,90 a mais que o plano Básico</span>
+    </div>
+    <!-- SUBSTITUIR: #checkout-downsell → link da Wiapy da oferta de R$ 16,90 -->
+    <a href="#checkout-downsell" class="cta">Sim, quero os bônus por R$ 16,90</a>
+    <!-- SUBSTITUIR: #checkout-basico → link da Wiapy do plano Básico -->
+    <a href="#checkout-basico" class="naovaler">Não, seguir só com os moldes</a>
+  </div>
+</div>
+
+<script>
+// Rolagem até os planos sem sujar a URL (não adiciona #planos)
+(function(){
+  var alvo = document.getElementById('planos');
+  document.querySelectorAll('.js-planos').forEach(function(a){
+    a.style.cursor = 'pointer';
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+})();
+
+// Data de hoje na faixa — sempre atualizada, sem depender do locale do aparelho
+(function(){
+  var MESES = ['janeiro','fevereiro','março','abril','maio','junho',
+               'julho','agosto','setembro','outubro','novembro','dezembro'];
+  var el = document.getElementById('dataHoje');
+
+  function escrever(){
+    var d = new Date();
+    el.textContent = d.getDate() + ' de ' + MESES[d.getMonth()];
+    return d;
+  }
+
+  var hoje = escrever();
+
+  // reescreve à meia-noite (aba aberta virando o dia) e ao voltar para a aba
+  var meiaNoite = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + 1, 0, 0, 2) - hoje;
+  setTimeout(function(){ escrever(); setInterval(escrever, 86400000); }, meiaNoite);
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) escrever(); });
+})();
+
+// Carrossel infinito com deslize automático lento
+(function(){
+  var trilho = document.getElementById('trilho'),
+      caixa  = document.getElementById('bolinhas'),
+      originais = Array.prototype.slice.call(trilho.querySelectorAll('.slide')),
+      TOTAL  = originais.length,
+      JANELA = 7,     // bolinhas visíveis
+      PITCH  = 13,    // 7px da bolinha + 6px de gap
+      VEL    = 0.28,  // px por frame (~17px/s) — deslize bem lento
+      GAP    = 14;
+
+  // clona o conjunto para o último ficar colado no primeiro
+  originais.forEach(function(s){
+    var c = s.cloneNode(true);
+    c.setAttribute('aria-hidden', 'true');
+    trilho.appendChild(c);
+  });
+
+  var pos = 0, ciclo = 0, pausa = 0, alvo = null, animando = false;
+  function passo(){ return originais[0].offsetWidth + GAP; }
+  function medir(){ ciclo = passo() * TOTAL; }
+
+  // bolinhas (uma por peça real)
+  var strip = document.createElement('div');
+  strip.className = 'strip';
+  for (var i = 0; i < TOTAL; i++) {
+    var b = document.createElement('button');
+    b.className = 'bolinha';
+    b.setAttribute('aria-label', 'Ir para peça ' + (i + 1));
+    b.onclick = (function(n){ return function(){ irPara(n); }; })(i);
+    strip.appendChild(b);
+  }
+  caixa.appendChild(strip);
+  var pontos = strip.querySelectorAll('.bolinha');
+
+  function indiceAtual(){
+    return ((Math.round(pos / passo()) % TOTAL) + TOTAL) % TOTAL;
+  }
+
+  function pintar(){
+    var atual = indiceAtual();
+    var ini = Math.max(0, Math.min(atual - Math.floor(JANELA / 2), TOTAL - JANELA));
+    strip.style.transform = 'translateX(' + (-ini * PITCH) + 'px)';
+    pontos.forEach(function(p, i){
+      p.classList.toggle('on', i === atual);
+      var naBorda = (i === ini && ini > 0) || (i === ini + JANELA - 1 && ini + JANELA < TOTAL);
+      p.classList.toggle('borda', naBorda && i !== atual);
+    });
+  }
+
+  // move para um slide específico com easing, depois volta a deslizar sozinho
+  function animarAte(destino){
+    alvo = destino; animando = true; pausa = Date.now() + 3000;
+  }
+  function irPara(n){
+    var atual = indiceAtual();
+    var delta = n - atual;
+    if (delta >  TOTAL / 2) delta -= TOTAL;   // pega o caminho mais curto
+    if (delta < -TOTAL / 2) delta += TOTAL;
+    animarAte(pos + delta * passo());
+  }
+  window.mover = function(d){ animarAte(Math.round(pos / passo()) * passo() + d * passo()); };
+
+  var reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function frame(){
+    if (!ciclo) medir();
+
+    if (animando && alvo !== null) {
+      pos += (alvo - pos) * 0.14;                    // easing suave
+      if (Math.abs(alvo - pos) < 0.5) { pos = alvo; animando = false; alvo = null; }
+    } else if (!reduzido && Date.now() > pausa) {
+      pos += VEL;                                     // deslize automático (não para no hover)
+    }
+
+    // salto invisível: ao passar de um ciclo, volta ao equivalente do anterior
+    if (pos >= ciclo) { pos -= ciclo; if (alvo !== null) alvo -= ciclo; }
+    if (pos < 0)      { pos += ciclo; if (alvo !== null) alvo += ciclo; }
+
+    trilho.scrollLeft = pos;
+    pintar();
+    requestAnimationFrame(frame);
+  }
+
+  // interação manual pausa o automático
+  ['pointerdown','touchstart','wheel'].forEach(function(ev){
+    trilho.addEventListener(ev, function(){ pausa = Date.now() + 3000; animando = false; alvo = null; }, { passive: true });
+  });
+  trilho.addEventListener('scroll', function(){
+    if (Math.abs(trilho.scrollLeft - pos) > 2) { pos = trilho.scrollLeft; pausa = Date.now() + 3000; }
+  }, { passive: true });
+
+  window.addEventListener('resize', medir);
+  medir();
+  requestAnimationFrame(frame);
+})();
+
+// Popup downsell
+function abrirPop(){ document.getElementById('pop').classList.add('on'); }
+function fecharPop(){ document.getElementById('pop').classList.remove('on'); }
+document.getElementById('pop').addEventListener('click', function(e){ if(e.target === this) fecharPop(); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') fecharPop(); });
+</script>
+
+</body>
+</html>
