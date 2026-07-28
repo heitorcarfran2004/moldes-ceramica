@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/funis/500-moldes-ceramica-fria/pagina-vendas.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/funis/500-moldes-ceramica-fria/$1"
+    }
+  ]
+}
