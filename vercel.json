@@ -5,6 +5,10 @@
       "destination": "/funis/500-moldes-ceramica-fria/pagina-vendas.html"
     },
     {
+      "source": "/promo",
+      "destination": "/funis/500-moldes-ceramica-fria/promo.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/funis/500-moldes-ceramica-fria/$1"
     }
