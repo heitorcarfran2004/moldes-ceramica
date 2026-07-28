@@ -1,8 +1,13 @@
+# Este repo contem apenas o site (funis/500-moldes-ceramica-fria).
+# Pesquisa, criativos e configs de automacao ficam so na maquina local.
+analises/
+criativos/
+briefing-criativos-video.md
+config-automatico.json
+config-automatico.example.json
+
 # Dependencias
 node_modules/
-
-# Segredos / config local
-config-automatico.json
 
 # Logs e temporarios
 *.log
