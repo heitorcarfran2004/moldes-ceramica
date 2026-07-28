@@ -1,4 +1,6 @@
 {
+  "buildCommand": "node build.cjs",
+  "outputDirectory": ".",
   "rewrites": [
     {
       "source": "/",
@@ -11,6 +13,17 @@
     {
       "source": "/(.*)",
       "destination": "/funis/500-moldes-ceramica-fria/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
     }
   ]
 }
