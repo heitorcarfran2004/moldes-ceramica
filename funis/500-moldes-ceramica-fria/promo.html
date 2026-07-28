@@ -44,7 +44,7 @@ section{padding:48px 0}
 /* ABERTURA */
 /* sem gradiente: o fundo e o mesmo creme do body de ponta a ponta, para nao
    criar degrau de cor na emenda com o card de oferta */
-.abre{text-align:center;padding-top:34px}
+.abre{text-align:center;padding-top:34px;padding-bottom:24px}
 .selo-of{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--terracota);color:var(--terracota);
   background:rgba(255,255,255,.6);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
   padding:7px 16px;border-radius:99px;margin-bottom:18px}
@@ -54,7 +54,9 @@ section{padding:48px 0}
 .abre p.sub{font-size:1rem;color:var(--marrom-suave);max-width:460px;margin:0 auto}
 
 /* CARD DA OFERTA */
-.oferta{padding-top:30px}
+/* o vao entre o subtitulo e o card e a soma deste padding com o padding-bottom
+   da .abre: 24 + 15 = 39px, metade dos 78px originais */
+.oferta{padding-top:15px}
 .caixa{position:relative;background:#fff;border:2px solid var(--terracota);border-radius:20px;
   padding:30px 22px 24px;box-shadow:var(--sombra-fd)}
 .caixa .fita{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--terracota);color:#fff;
