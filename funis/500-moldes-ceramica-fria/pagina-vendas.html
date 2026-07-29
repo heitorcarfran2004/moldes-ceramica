@@ -151,24 +151,6 @@ p.subtit{text-align:center;color:var(--marrom-suave);margin-bottom:30px;font-siz
 .lista li:last-child{border:none}
 .lista li:before{content:"✓";position:absolute;left:4px;color:var(--verde);font-weight:700}
 
-/* PRINTS DE CONVERSA
-   Carrossel horizontal: 5 prints empilhados na vertical deixariam a secao com
-   uns 5.000px. Aqui ocupa a altura de um print so. Sem deslize automatico de
-   proposito — leitura de conversa precisa de tempo, entao quem manda e o dedo.
-   Com scroll-snap, que o carrossel de pecas nao pode usar por causa do auto. */
-.prints{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
-  padding:4px 20px 6px;margin:0 -20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.prints::-webkit-scrollbar{display:none}
-.print{flex:0 0 76%;max-width:288px;scroll-snap-align:center;border-radius:16px;
-  overflow:hidden;background:#fff;border:1px solid rgba(58,27,9,.10);
-  box-shadow:0 6px 20px rgba(58,27,9,.13)}
-/* aspect-ratio trava o espaco antes da imagem chegar: sem isso a secao pula (CLS) */
-.print img{display:block;width:100%;height:auto;aspect-ratio:720/1358;background:#EDE4DA}
-.arraste{display:flex;align-items:center;justify-content:center;gap:6px;
-  margin-top:12px;font-size:.74rem;color:var(--marrom-suave);opacity:.75}
-.arraste svg{width:15px;height:15px;stroke:var(--marrom-suave);stroke-width:1.8;fill:none;
-  stroke-linecap:round;stroke-linejoin:round}
-
 /* PROVA */
 .prova{background:var(--creme-esc)}
 .palco-prints{position:relative}
@@ -182,6 +164,9 @@ p.subtit{text-align:center;color:var(--marrom-suave);margin-bottom:30px;font-siz
   box-shadow:0 6px 20px rgba(58,27,9,.13);opacity:.42;transform:scale(.93);
   transition:opacity .28s ease,transform .28s ease}
 .print.on{opacity:1;transform:scale(1)}
+/* durante o salto do loop a transicao e desligada: sem isso o card que entra
+   no lugar animaria de .42 para 1 e apareceria um flash na troca */
+.prints.sem-anim .print{transition:none}
 /* aspect-ratio trava o espaco antes da imagem chegar: sem isso a secao pula (CLS) */
 .print img{display:block;width:100%;height:auto;aspect-ratio:720/1358;background:#EDE4DA}
 /* bolinha ativa vira pilula alongada em vez de so mudar de cor */
@@ -742,30 +727,58 @@ footer{background:var(--marrom);color:#9C8574;text-align:center;padding:30px 20p
   requestAnimationFrame(frame);
 })();
 
-// Carrossel de depoimentos. Sem deslize automatico: ler conversa leva tempo,
-// entao quem controla e o dedo. A rolagem em si e nativa (scroll-snap) — o JS
-// so pinta o estado e move nas setas/bolinhas.
+// Carrossel de depoimentos: infinito, com avanco automatico e pausa entre um
+// print e outro. A rolagem continua nativa (scroll-snap), entao o arrasto no
+// celular mantem a fisica do sistema — o JS so move, pinta e faz o loop.
 (function(){
   var trilho = document.getElementById('prints');
   if (!trilho) return;
-  var cards = Array.prototype.slice.call(trilho.children),
-      caixa = document.getElementById('pontosPrints'),
-      setaE = document.getElementById('pSetaE'),
-      setaD = document.getElementById('pSetaD');
 
-  cards.forEach(function(_, i){
+  var originais = Array.prototype.slice.call(trilho.children),
+      N = originais.length,
+      caixa = document.getElementById('pontosPrints'),
+      DWELL = 4500,   // tempo parado em cada print
+      RETOMA = 9000;  // silencio apos interacao antes de voltar a girar
+
+  // Tres conjuntos: [copia][real][copia]. Comecando no primeiro real, ele nasce
+  // centrado com o ultimo a esquerda e o segundo a direita — e ha sempre vizinho
+  // dos dois lados, entao o loop nunca mostra borda vazia.
+  function copia(){
+    var frag = document.createDocumentFragment();
+    originais.forEach(function(el){
+      var c = el.cloneNode(true);
+      c.setAttribute('aria-hidden', 'true');
+      var img = c.querySelector('img');
+      if (img) img.alt = '';
+      frag.appendChild(c);
+    });
+    return frag;
+  }
+  trilho.appendChild(copia());
+  trilho.insertBefore(copia(), trilho.firstChild);
+
+  var cards = Array.prototype.slice.call(trilho.children),
+      idx = N,
+      pausa = 0;
+
+  originais.forEach(function(_, i){
     var b = document.createElement('button');
     b.className = 'ponto';
     b.setAttribute('aria-label', 'Ir para o depoimento ' + (i + 1));
-    b.onclick = function(){ irPara(i); };
+    b.onclick = function(){ pausa = Date.now() + RETOMA; ir(N + i, true); };
     caixa.appendChild(b);
   });
   var pontos = Array.prototype.slice.call(caixa.children);
 
-  // Mede pela posicao real de cada card em vez de multiplicar por uma largura
-  // fixa: com scroll-snap-align:center o passo nao e uniforme nas bordas.
-  function atual(){
-    var meio = trilho.scrollLeft + trilho.clientWidth / 2, alvo = 0, menor = Infinity;
+  // Posicao medida pelo offsetLeft real: com scroll-snap-align:center o passo
+  // nao e uniforme nas bordas, entao multiplicar por largura fixa dessincroniza.
+  function centro(i){
+    var el = cards[i];
+    return el.offsetLeft - (trilho.clientWidth - el.offsetWidth) / 2;
+  }
+
+  function maisProximo(){
+    var meio = trilho.scrollLeft + trilho.clientWidth / 2, alvo = idx, menor = Infinity;
     cards.forEach(function(el, i){
       var d = Math.abs(el.offsetLeft + el.offsetWidth / 2 - meio);
       if (d < menor) { menor = d; alvo = i; }
@@ -773,31 +786,56 @@ footer{background:var(--marrom);color:#9C8574;text-align:center;padding:30px 20p
     return alvo;
   }
 
-  function irPara(i){
-    i = Math.max(0, Math.min(cards.length - 1, i));
-    var el = cards[i];
-    trilho.scrollTo({
-      left: el.offsetLeft - (trilho.clientWidth - el.offsetWidth) / 2,
-      behavior: 'smooth'
-    });
+  function ir(i, suave){
+    idx = i;
+    if (suave) trilho.scrollTo({ left: centro(i), behavior: 'smooth' });
+    else trilho.scrollLeft = centro(i);
+    pintar();
   }
-  window.moverPrint = function(d){ irPara(atual() + d); };
 
   function pintar(){
-    var a = atual();
-    cards.forEach(function(c, i){ c.classList.toggle('on', i === a); });
-    pontos.forEach(function(p, i){ p.classList.toggle('on', i === a); });
-    setaE.style.opacity = a === 0 ? '.35' : '';
-    setaD.style.opacity = a === cards.length - 1 ? '.35' : '';
+    var real = ((idx % N) + N) % N;
+    cards.forEach(function(c, i){ c.classList.toggle('on', i === idx); });
+    pontos.forEach(function(p, i){ p.classList.toggle('on', i === real); });
+  }
+
+  // O salto invisivel acontece so depois que a rolagem parou, e sempre para um
+  // card identico do conjunto do meio: a imagem na tela nao muda.
+  function saltar(novo){
+    trilho.classList.add('sem-anim');
+    idx = novo;
+    trilho.scrollLeft = centro(idx);
+    pintar();
+    void trilho.offsetWidth; // reflow: fixa o estado novo antes de reanimar
+    trilho.classList.remove('sem-anim');
   }
 
   var t;
   trilho.addEventListener('scroll', function(){
     clearTimeout(t);
-    t = setTimeout(pintar, 60);
+    t = setTimeout(function(){
+      idx = maisProximo();
+      if (idx >= 2 * N) saltar(idx - N);
+      else if (idx < N) saltar(idx + N);
+      else pintar();
+    }, 130);
   }, { passive: true });
-  window.addEventListener('resize', pintar);
-  pintar();
+
+  ['pointerdown', 'touchstart', 'wheel'].forEach(function(ev){
+    trilho.addEventListener(ev, function(){ pausa = Date.now() + RETOMA; }, { passive: true });
+  });
+
+  window.moverPrint = function(d){ pausa = Date.now() + RETOMA; ir(idx + d, true); };
+  window.addEventListener('resize', function(){ ir(idx, false); });
+
+  ir(N, false);
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(function(){
+      if (Date.now() < pausa || document.hidden) return;
+      ir(idx + 1, true);
+    }, DWELL);
+  }
 })();
 
 // Popup downsell
