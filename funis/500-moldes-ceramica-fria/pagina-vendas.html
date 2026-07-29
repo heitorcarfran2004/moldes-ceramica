@@ -151,6 +151,24 @@ p.subtit{text-align:center;color:var(--marrom-suave);margin-bottom:30px;font-siz
 .lista li:last-child{border:none}
 .lista li:before{content:"✓";position:absolute;left:4px;color:var(--verde);font-weight:700}
 
+/* PRINTS DE CONVERSA
+   Carrossel horizontal: 5 prints empilhados na vertical deixariam a secao com
+   uns 5.000px. Aqui ocupa a altura de um print so. Sem deslize automatico de
+   proposito — leitura de conversa precisa de tempo, entao quem manda e o dedo.
+   Com scroll-snap, que o carrossel de pecas nao pode usar por causa do auto. */
+.prints{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:4px 20px 6px;margin:0 -20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.prints::-webkit-scrollbar{display:none}
+.print{flex:0 0 76%;max-width:288px;scroll-snap-align:center;border-radius:16px;
+  overflow:hidden;background:#fff;border:1px solid rgba(58,27,9,.10);
+  box-shadow:0 6px 20px rgba(58,27,9,.13)}
+/* aspect-ratio trava o espaco antes da imagem chegar: sem isso a secao pula (CLS) */
+.print img{display:block;width:100%;height:auto;aspect-ratio:720/1358;background:#EDE4DA}
+.arraste{display:flex;align-items:center;justify-content:center;gap:6px;
+  margin-top:12px;font-size:.74rem;color:var(--marrom-suave);opacity:.75}
+.arraste svg{width:15px;height:15px;stroke:var(--marrom-suave);stroke-width:1.8;fill:none;
+  stroke-linecap:round;stroke-linejoin:round}
+
 /* PROVA */
 .prova{background:var(--creme-esc)}
 .dep{background:#fff;border-radius:14px;padding:20px;margin-bottom:14px;box-shadow:var(--sombra);
@@ -418,7 +436,20 @@ footer{background:var(--marrom);color:#9C8574;text-align:center;padding:30px 20p
 <section class="prova">
   <div class="wrap">
     <h2 class="tit">Quem já testou</h2>
-    <p class="subtit">Feedback de quem recebeu o material</p>
+    <p class="subtit">Mensagens que chegaram no nosso WhatsApp — arraste para ler</p>
+
+    <div class="prints">
+      <div class="print"><img src="assets/depoimentos/dep-1-rosangela.webp" width="720" height="1358" loading="lazy" alt="Conversa de WhatsApp: cliente conta que nunca tinha tocado em cerâmica fria e tinha medo de estragar o material, e que fez a primeira bandejinha e deu certo de primeira"></div>
+      <div class="print"><img src="assets/depoimentos/dep-2-claudia.webp" width="720" height="1358" loading="lazy" alt="Conversa de WhatsApp: cliente jurava que as peças não iam encaixar e mostra foto de duas canecas modeladas com encaixe simétrico"></div>
+      <div class="print"><img src="assets/depoimentos/dep-3-aline-jarra.webp" width="720" height="1358" loading="lazy" alt="Conversa de WhatsApp: cliente mostra foto da primeira peça grande, uma jarra de cerâmica pintada"></div>
+      <div class="print"><img src="assets/depoimentos/dep-4-jose.webp" width="720" height="1358" loading="lazy" alt="Conversa de WhatsApp: cliente do interior não encontrava massa de cerâmica e conta que fez a massa em casa e o primeiro pratinho"></div>
+      <div class="print"><img src="assets/depoimentos/dep-5-aline-azeite.webp" width="720" height="1358" loading="lazy" alt="Conversa de WhatsApp: cliente mostra foto de um porta-azeite de cerâmica e conta que recebeu duas encomendas após postar no Instagram"></div>
+    </div>
+
+    <p class="arraste">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 4.5 12 9 18"/><path d="M15 6l4.5 6-4.5 6"/></svg>
+      Arraste para o lado
+    </p>
 
     <!-- Fotos pendentes de confirmação: se forem as fotos reais das clientes
          (ou autorizadas), trocar o .av-ini por <img class="av-foto" src="..."> -->
